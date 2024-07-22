@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nanda\\Desktop\\ssis\\learning-ssis\\Tutorial SSIS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F37F0A0B-7510-4A04-97EF-02B6ACE1A09A}|Tutorial SSIS\\Tutorial SSIS.dtproj|C:\\Users\\nanda\\Desktop\\ssis\\learning-ssis\\Tutorial SSIS\\Tutorial SSIS\\Lesson 1.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{F37F0A0B-7510-4A04-97EF-02B6ACE1A09A}|Tutorial SSIS\\Tutorial SSIS.dtproj|solutionrelative:Tutorial SSIS\\Lesson 1.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lesson 1.dtsx [Design]",
+              "DocumentMoniker": "C:\\Users\\nanda\\Desktop\\ssis\\learning-ssis\\Tutorial SSIS\\Tutorial SSIS\\Lesson 1.dtsx",
+              "RelativeDocumentMoniker": "Tutorial SSIS\\Lesson 1.dtsx",
+              "ToolTip": "C:\\Users\\nanda\\Desktop\\ssis\\learning-ssis\\Tutorial SSIS\\Tutorial SSIS\\Lesson 1.dtsx [Design]",
+              "RelativeToolTip": "Tutorial SSIS\\Lesson 1.dtsx [Design]",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFTSURBVDhPY2QAgqUbD/8H0bjAu49fGG7fvZ8\u002BqTFrFlQIAv7/h\u002BgDGfDv71\u002BcePKi7f9NPZP/59VPSwNrQAJMUJogaK0pZDh\u002B6uxMdEOINqC6pR9MgwwBM6CABUqDQcWCa1AWA0NHghac//k9G0NcZAiYvWj5GjANAxgu\u002BC2rAcYwAGJz6NkxZEe7QUVQAYYBrI9vgDEMwPhffkEFsAFCsfDp\u002B9//D98jYgOqDQwIBiLI5vc/GBjefP/PwMLGARVFABQDQIEGwyCArPnNdwaGf1iSG85ARNb8\u002BhsDwweQAb\u002BBAmgAZyAia371lYHh7MnrDI9/yzA4hhQwlM29/J/BeCbYPSjpABT3MJvf//jP8BZoK4j95TfE7SD5hy\u002B\u002BMFy5846hCyyCZMDUpbugLFxABq75zPU3UDGoAaDchp7C0AHI6TDNyAaAszNRAOpnFHA2nREAjMTvHMVXB8cAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-07-22T22:34:08.908Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
