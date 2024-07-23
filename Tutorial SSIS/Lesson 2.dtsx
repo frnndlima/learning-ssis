@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/22/2024 7:34:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-TGM88GA"
+  DTS:CreatorName="DESKTOP-TGM88GA\nanda"
+  DTS:DTSID="{91ECA06C-157D-49AC-9881-88FC11DE6332}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5314.0"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="Lesson 2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{B475A35F-85BE-40DB-B238-9915CD0DFCCA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Dados de Origem de Arquivo Simples de Exemplo]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FAED54D1-41F2-47A0-BD1A-E5BC6D1ECB0D}"
+      DTS:ObjectName="Dados de Origem de Arquivo Simples de Exemplo">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::varFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AverageRate"
+              DTS:DTSID="{62E9A7AE-B78F-4EFD-B1A7-5A061D8ACA6C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyID"
+              DTS:DTSID="{19DC0CBC-AEDD-4706-8496-C3A6DD5C4481}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyDate"
+              DTS:DTSID="{5D546F69-BF1C-4E82-BFB5-94A5633C9E01}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndOfDayRate"
+              DTS:DTSID="{2B666DED-CA47-4E8A-93CB-DF17044D7197}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{290E32FB-12F0-417D-B744-8CF2AED114B3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4B8E5B2C-FC27-406E-97C3-C3DD77DB503C}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName1">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5D9FA91-76DB-4863-B706-72C96F3F3411}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace=""
+      DTS:ObjectName="varFileName2">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Arquivo Foreach na Pasta"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Contêiner do Loop Foreach"
+      DTS:DTSID="{CFEBF2E5-136C-428E-84F9-D48F2C5CB880}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="Arquivo Foreach na Pasta">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{E7B1156D-7297-442B-8713-5560E4FE6332}"
+        DTS:ObjectName="{E7B1156D-7297-442B-8713-5560E4FE6332}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\nanda\Desktop\Creating a Simple ETL Package\Sample Data" />
+            <FEFEProperty
+              FileSpec="Currency_*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarefa Fluxo de Dados"
+          DTS:DTSID="{009452C4-2A92-4CE3-B5A0-A948330DB405}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="1033"
+          DTS:ObjectName="Extrair Dados de Moeda de Exemplo"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+                  description="Destino OLE DB"
+                  name="Destino OLE DB de Exemplo"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowset">[NewFactCurrencyRate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o modo usado para acessar o banco de dados."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Connections[OleDbConnection]"
+                      connectionManagerID="{2891E62A-3910-49B4-A4ED-6836BA34DD2A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost_SQLEXPRESS.AdventureWorksDW2022]"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB]"
+                      errorOrTruncationOperation="Inserir"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Destino OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].Columns[AverageRate]"
+                          cachedDataType="r4"
+                          cachedName="AverageRate"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[AverageRate]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[AverageRate]" />
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].Columns[CurrencyID]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="CurrencyID"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[CurrencyID]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyID]" />
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].Columns[CurrencyDate]"
+                          cachedDataType="dbDate"
+                          cachedName="CurrencyDate"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[CurrencyDate]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyDate]" />
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].Columns[EndOfDayRate]"
+                          cachedDataType="r4"
+                          cachedName="EndOfDayRate"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[EndOfDayRate]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[EndOfDayRate]" />
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].Columns[CurrencyKey]"
+                          cachedDataType="i4"
+                          cachedName="CurrencyKey"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[CurrencyKey]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Correspondência de Pesquisa].Columns[CurrencyKey]" />
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].Columns[DateKey]"
+                          cachedDataType="i4"
+                          cachedName="DateKey"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[DateKey]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Correspondência de Pesquisa].Columns[DateKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[AverageRate]"
+                          dataType="r4"
+                          name="AverageRate" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[CurrencyID]"
+                          dataType="wstr"
+                          length="3"
+                          name="CurrencyID" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[CurrencyDate]"
+                          dataType="dbDate"
+                          name="CurrencyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[EndOfDayRate]"
+                          dataType="r4"
+                          name="EndOfDayRate" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[CurrencyKey]"
+                          dataType="i4"
+                          name="CurrencyKey" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB].ExternalColumns[DateKey]"
+                          dataType="i4"
+                          name="DateKey" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Outputs[Saída de Erro de Destino OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Destino OLE DB"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Origem de Arquivo Simples;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+                  description="Origem de Arquivo Simples"
+                  localeId="1033"
+                  name="Extrair Dados de Moeda de Exemplo"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica se colunas de comprimento zero são tratadas como nulas."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica o nome de uma coluna de saída que contém o nome do arquivo. Se nenhum nome for especificado, nenhuma coluna de saída contendo o nome de arquivo será gerada."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Dados de Origem de Arquivo Simples de Exemplo]"
+                      connectionManagerRefId="Package.ConnectionManagers[Dados de Origem de Arquivo Simples de Exemplo]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples]"
+                      name="Saída de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[AverageRate]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[AverageRate]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[AverageRate]"
+                          name="AverageRate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CurrencyID]"
+                          length="3"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyID]"
+                          name="CurrencyID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CurrencyDate]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyDate]"
+                          name="CurrencyDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[EndOfDayRate]"
+                          dataType="r4"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[EndOfDayRate]"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[EndOfDayRate]"
+                          name="EndOfDayRate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica se os dados estão em formato binário."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[AverageRate]"
+                          dataType="r4"
+                          name="AverageRate" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CurrencyID]"
+                          dataType="wstr"
+                          length="3"
+                          name="CurrencyID" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[CurrencyDate]"
+                          dataType="dbDate"
+                          name="CurrencyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].ExternalColumns[EndOfDayRate]"
+                          dataType="r4"
+                          name="EndOfDayRate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples]"
+                      isErrorOut="true"
+                      name="Saída de Erro de Origem de Arquivo Simples">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Coluna de Saída de Erro de Origem de Arquivo Simples"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[Coluna de Saída de Erro de Origem de Arquivo Simples]"
+                          name="Coluna de Saída de Erro de Origem de Arquivo Simples" />
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Erro de Origem de Arquivo Simples].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="Pesquisar Chave de Moeda"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [dbo].[DimCurrency]
+WHERE [CurrencyAlternateKey]
+IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+    'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+    'MXN', 'SAR', 'USD', 'VEB')</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT * FROM [dbo].[DimCurrency]
+WHERE [CurrencyAlternateKey]
+IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+    'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+    'MXN', 'SAR', 'USD', 'VEB')) [refTable]
+where [refTable].[CurrencyAlternateKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CurrencyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyAlternateKey" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Connections[OleDbConnection]"
+                      connectionManagerID="{2891E62A-3910-49B4-A4ED-6836BA34DD2A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost_SQLEXPRESS.AdventureWorksDW2022]"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Inputs[Entrada de Pesquisa].Columns[CurrencyID]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="CurrencyID"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">CurrencyAlternateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Correspondência de Pesquisa].Columns[CurrencyKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Correspondência de Pesquisa].Columns[CurrencyKey]"
+                          name="CurrencyKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">CurrencyKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="Pesquisar Código de Data"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[FullDateAlternateKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateAlternateKey" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyDate]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Connections[OleDbConnection]"
+                      connectionManagerID="{2891E62A-3910-49B4-A4ED-6836BA34DD2A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost_SQLEXPRESS.AdventureWorksDW2022]"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Inputs[Entrada de Pesquisa].Columns[CurrencyDate]"
+                          cachedDataType="dbDate"
+                          cachedName="CurrencyDate"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples].Columns[CurrencyDate]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">FullDateAlternateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Correspondência de Pesquisa].Columns[DateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copiar Coluna"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Correspondência de Pesquisa].Columns[DateKey]"
+                          name="DateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo.Paths[Saída de Correspondência de Pesquisa]"
+                  endId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo.Paths[Saída de Correspondência de Pesquisa1]"
+                  endId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo.Inputs[Entrada de Destino OLE DB]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo.Paths[Saída de Origem de Arquivo Simples]"
+                  endId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Origem de Arquivo Simples"
+                  startId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Outputs[Saída de Origem de Arquivo Simples]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{177622B4-F348-4A1D-954A-C0BF42D0EA11}"
+          DTS:ObjectName="{177622B4-F348-4A1D-954A-C0BF42D0EA11}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::varFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="8">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo"
+          TopLeft="5.5,4" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="268,101"
+          Size="268,144"
+          Id="Package\Arquivo Foreach na Pasta"
+          TopLeft="391,96" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data"
+          TopLeft="332.25,256" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo"
+          TopLeft="332.25,82" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo"
+          TopLeft="332.25,343" />
+        <NodeLayout
+          Size="258,42"
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda"
+          TopLeft="332.25,169" />
+        <EdgeLayout
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo.Paths[Saída de Origem de Arquivo Simples]"
+          TopLeft="461.25,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo.Paths[Saída de Correspondência de Pesquisa1]"
+          TopLeft="461.25,298">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.3740234375,12.65234375,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="461.25,211">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.3740234375,12.65234375,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="O fluxo de dados extrai os dados de um arquivo, pesquisa valores na coluna CurrencyKey da tabela DimCurrency e na coluna DateKey da tabela DimDate, além de gravar os dados na tabela NewFactCurrencyRate."
+          ParentId="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo"
+          Size="328,78"
+          Id="83625156-b363-48e0-90d7-dd363fd3a73d"
+          TopLeft="638,70">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FFFFFFFF">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Código de Data">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Destino OLE DB de Exemplo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Arquivo Foreach na Pasta\Extrair Dados de Moeda de Exemplo\Pesquisar Chave de Moeda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

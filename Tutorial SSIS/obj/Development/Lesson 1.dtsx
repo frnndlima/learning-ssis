@@ -218,8 +218,8 @@
               <connections>
                 <connection
                   refId="Package\Extrair Dados de Moeda de Exemplo\Extrair Dados de Moeda de Exemplo.Connections[FlatFileConnection]"
-                  connectionManagerID="{FAED54D1-41F2-47A0-BD1A-E5BC6D1ECB0D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Dados de Origem de Arquivo Simples de Exemplo]"
+                  connectionManagerID="{FAED54D1-41F2-47A0-BD1A-E5BC6D1ECB0D}:invalid"
+                  connectionManagerRefId="{FAED54D1-41F2-47A0-BD1A-E5BC6D1ECB0D}:invalid"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
